@@ -1,0 +1,30 @@
+#style1{
+    width: 97%
+}
+#style2{
+    width: 85%
+}
+#style3{
+    width: 80%
+}
+#style4{
+    width: 90%;
+}
+#style5{
+    width: 45%
+}
+#style6{
+    width: 67%
+}
+#nav{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1020
+}
+#li:hover{
+    color: blue;
+}
+#img{
+    width: 100%;
+}
