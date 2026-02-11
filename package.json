@@ -1,36 +1,27 @@
 {
-  "name": "John_Doe",
-  "version": "1.5.0",
-  "description": "An elegant responsive bootstrap 4.x theme.",
-  "main": "gulpfile.js",
-  "author": "DevCRUD",
+  "name": "parth-cv-nextjs",
+  "version": "2.0.0",
+  "description": "Modern portfolio with Next.js, Tailwind, and contact integration",
   "scripts": {
-    "start": "gulp"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "nodemailer": "^6.9.0",
+    "zod": "^3.22.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.2",
-    "imagemin-jpeg-recompress": "^6.0.0",
-    "imagemin-pngquant": "^7.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "ie >= 8",
-    "edge >= 15",
-    "ie_mob >= 10",
-    "ff >= 45",
-    "chrome >= 45",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4"
-  ]
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
 }
