@@ -1,7 +1,4 @@
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import WhatsAppFab from '@/components/WhatsAppFab'
 import CTASection from '@/components/CTASection'
 import ProjectCard from '@/components/ProjectCard'
 
@@ -31,9 +28,7 @@ export default function Home() {
   ]
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
         {/* Hero Section */}
         <header className="relative overflow-hidden flex-1">
           <div className="absolute top-0 right-0 -z-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
@@ -195,9 +190,6 @@ export default function Home() {
           <CTASection />
         </section>
       </div>
-
-      <Footer />
-      <WhatsAppFab />
-    </>
+    </div>
   )
 }

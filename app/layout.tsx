@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import WhatsAppFab from '@/components/WhatsAppFab'
 
 export const metadata: Metadata = {
   title: 'Parth Patel | React Developer & UI Specialist',
@@ -25,7 +28,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white selection:bg-primary selection:text-white">
         <ThemeProvider>
+          <Navbar />
           {children}
+          <Footer />
+          <WhatsAppFab />
         </ThemeProvider>
       </body>
     </html>

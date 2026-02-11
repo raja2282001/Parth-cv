@@ -1,7 +1,4 @@
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import WhatsAppFab from '@/components/WhatsAppFab'
 
 export default function Projects() {
   const projects = [
@@ -38,9 +35,7 @@ export default function Projects() {
   ]
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
         {/* Header */}
         <div className="max-w-7xl mx-auto w-full px-4 py-12">
           <div className="flex flex-col gap-4">
@@ -141,9 +136,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-
-      <Footer />
-      <WhatsAppFab />
-    </>
+    </div>
   )
 }
