@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 
 type Theme = 'light' | 'dark'
 
@@ -11,58 +11,50 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
-  const [mounted, setMounted] = useState(false)
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<Theme>('light')
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    // Check if theme is stored in localStorage
+    // Get initial theme
     const storedTheme = localStorage.getItem('theme') as Theme | null
-    // Check system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
     const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light')
-    setTheme(initialTheme)
     
-    // Apply theme to document
-    if (initialTheme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
+    setTheme(initialTheme)
+    applyTheme(initialTheme)
+    setIsMounted(true)
   }, [])
+
+  const applyTheme = (newTheme: Theme) => {
+    const html = document.documentElement
+    if (newTheme === 'dark') {
+      html.classList.add('dark')
+    } else {
+      html.classList.remove('dark')
+    }
+  }
 
   const toggleTheme = () => {
     setTheme((prev) => {
       const newTheme = prev === 'dark' ? 'light' : 'dark'
       localStorage.setItem('theme', newTheme)
-      
-      if (newTheme === 'dark') {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-      
+      applyTheme(newTheme)
       return newTheme
     })
   }
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>
-  }
-
+  // Return context provider without rendering children until mounted
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      {isMounted ? children : null}
     </ThemeContext.Provider>
   )
 }
 
 export function useTheme() {
   const context = useContext(ThemeContext)
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useTheme must be used within ThemeProvider')
   }
   return context

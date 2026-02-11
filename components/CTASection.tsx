@@ -7,7 +7,7 @@ export default function CTASection() {
   const [copied, setCopied] = useState(false)
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@example.com')
+    navigator.clipboard.writeText('patelparth1803@gmail.com')
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
