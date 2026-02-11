@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -24,13 +25,17 @@ export default function Navbar() {
           <Link href="/contact" className="text-slate-600 dark:text-slate-400 hover:text-primary transition">Contact</Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
-        >
-          <span className="material-symbols-outlined text-[24px]">menu</span>
-        </button>
+        {/* Right Side Icons */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+          >
+            <span className="material-symbols-outlined text-[24px]">menu</span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
