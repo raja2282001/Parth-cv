@@ -1,8 +1,8 @@
 'use client'
 
 export default function WhatsAppFab() {
-  const phoneNumber = '919876543210' // Replace with your WhatsApp number (country code + number)
-  const message = 'Hi! I am interested in discussing a project with you.'
+  const phoneNumber = '919510636476' // Parth's WhatsApp number
+  const message = 'Hi Parth! I\'m interested in discussing a project or opportunity with you.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   return (

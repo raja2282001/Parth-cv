@@ -20,23 +20,44 @@ export default function Footer() {
 
         <div className="flex gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/raja2282001"
             target="_blank"
             rel="noopener noreferrer"
+            title="GitHub"
             className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-colors"
           >
             <span className="material-symbols-outlined">code</span>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/patel-parth-04670b247"
             target="_blank"
             rel="noopener noreferrer"
+            title="LinkedIn"
             className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-colors"
           >
             <span className="material-symbols-outlined">work</span>
           </a>
           <a
-            href="mailto:contact@example.com"
+            href="https://instagram.com/ll__patel_raja_ll"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+            className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-colors"
+          >
+            <span className="material-symbols-outlined">image</span>
+          </a>
+          <a
+            href="https://www.facebook.com/patel.raja.79827803"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Facebook"
+            className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-colors"
+          >
+            <span className="material-symbols-outlined">group</span>
+          </a>
+          <a
+            href="mailto:patelparth1803@gmail.com"
+            title="Email"
             className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-colors"
           >
             <span className="material-symbols-outlined">mail</span>

@@ -184,20 +184,39 @@ export default function Contact() {
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col gap-6">
-              {/* Contact Methods */}
+            <div className="space-y-6">
+              {/* Email */}
               <div className="bento-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary">mail</span>
-                  Contact Methods
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Email</p>
-                    <a href="mailto:patelparth4655@gmail.com" className="text-primary hover:underline font-semibold">
-                      patelparth4655@gmail.com
-                    </a>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary">mail</span>
                   </div>
+                  <h3 className="font-semibold text-slate-900 dark:text-white">Email</h3>
+                </div>
+                <a href="mailto:patelparth1803@gmail.com" className="text-primary hover:underline">patelparth1803@gmail.com</a>
+              </div>
+
+              {/* Phone */}
+              <div className="bento-card rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary">phone</span>
+                  </div>
+                  <h3 className="font-semibold text-slate-900 dark:text-white">WhatsApp</h3>
+                </div>
+                <a href="https://wa.me/919510636476" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">+91 9510636476</a>
+              </div>
+
+              {/* Location */}
+              <div className="bento-card rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary">location_on</span>
+                  </div>
+                  <h3 className="font-semibold text-slate-900 dark:text-white">Location</h3>
+                </div>
+                <p className="text-slate-600 dark:text-slate-400">India</p>
+              </div>
                   <div>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Phone</p>
                     <a href="tel:+919876543210" className="text-primary hover:underline font-semibold">

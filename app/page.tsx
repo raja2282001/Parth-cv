@@ -3,29 +3,30 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import WhatsAppFab from '@/components/WhatsAppFab'
 import CTASection from '@/components/CTASection'
+import ProjectCard from '@/components/ProjectCard'
 
 export default function Home() {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'A high-performance storefront with real-time inventory and Stripe integration.',
-      tags: ['React', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop',
+      title: 'LEARNVE',
+      description: 'An online learning platform similar to Udemy with video-based learning and seamless course navigation.',
+      tags: ['Next.js', 'React', 'MongoDB'],
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=800&h=400&fit=crop',
     },
     {
       id: 2,
-      title: 'Task Flow SaaS',
-      description: 'Productivity tool featuring drag-and-drop kanban boards and team collaboration.',
-      tags: ['Next.js', 'PostgreSQL'],
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop',
+      title: 'Openwayz-hazel',
+      description: 'Fast and seamless e-commerce platform built with Next.js prioritizing performance and user engagement.',
+      tags: ['Next.js', 'Tailwind', 'Stripe'],
+      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop',
     },
     {
       id: 3,
-      title: 'Crypto Dashboard',
-      description: 'Real-time cryptocurrency tracking with interactive charts and alerts.',
-      tags: ['Vite', 'D3.js'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
+      title: 'TecheinHub Technologies',
+      description: 'Frontend development using React and Next.js, creating dynamic and responsive web applications.',
+      tags: ['React', 'Next.js', 'TypeScript'],
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop',
     },
   ]
 
@@ -47,15 +48,15 @@ export default function Home() {
                   Available for hire
                 </div>
                 <h1 className="text-slate-900 dark:text-white text-5xl font-black leading-[1.1] tracking-[-0.03em] md:text-7xl">
-                  Hi, I&apos;m <span className="text-primary">Parth</span>
+                  Hi, I&apos;m <span className="text-primary">Parth Patel</span>
                 </h1>
                 <div className="flex items-center gap-2">
                   <h2 className="text-slate-600 dark:text-slate-400 text-xl font-medium">
-                    React Developer <span className="text-primary">|</span> Full Stack Developer
+                    Frontend &amp; Backend Developer <span className="text-primary">|</span> Web Developer (7 months experience)
                   </h2>
                 </div>
                 <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed max-w-lg">
-                  Building high-performance web applications with modern technologies. Focused on creating seamless user experiences and robust architectures.
+                  Building high-performance web applications with React, Next.js, and modern technologies. Focused on creating seamless user experiences with responsive design and robust architectures.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <Link
@@ -113,35 +114,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-8 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
-              <div key={project.id} className="group relative flex flex-col gap-4 bento-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
-                <div className="w-full aspect-video rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
-                  <div className="absolute top-2 left-2 z-10 flex gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 rounded bg-black/60 backdrop-blur text-[10px] text-white font-bold uppercase">{tag}</span>
-                    ))}
-                  </div>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-slate-900 dark:text-white text-xl font-bold mb-1">{project.title}</h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm line-clamp-2">{project.description}</p>
-                </div>
-                <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800">
-                  <div className="flex gap-3">
-                    <button className="text-slate-400 hover:text-primary transition cursor-pointer">
-                      <span className="material-symbols-outlined text-xl">link</span>
-                    </button>
-                    <button className="text-slate-400 hover:text-primary transition cursor-pointer">
-                      <span className="material-symbols-outlined text-xl">terminal</span>
-                    </button>
-                  </div>
-                  <button className="text-xs font-bold text-primary group-hover:translate-x-1 transition-transform">CASE STUDY →</button>
-                </div>
-              </div>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
