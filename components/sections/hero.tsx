@@ -63,7 +63,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            Frontend & Backend Web Developer with 7 months of professional experience. Specializing in MERN stack and modern web technologies.
+            Frontend & Backend Web Developer with 2 years of professional experience. Specializing in MERN stack and modern web technologies.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -96,7 +96,7 @@ export function HeroSection() {
           >
             {[
               { number: '10+', label: 'Projects' },
-              { number: '7mo', label: 'Experience' },
+              { number: '2yr', label: 'Experience' },
               { number: '100%', label: 'Dedicated' },
             ].map((stat, index) => (
               <div key={index} className="text-center">

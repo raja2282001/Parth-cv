@@ -42,7 +42,7 @@ export function AboutSection() {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With 7 months of professional experience in web development, I&apos;ve worked on diverse projects at TecheinHub Technologies and RNK IT Solutions. My expertise spans database design, server-side programming, API development, and front-end development, ensuring overall performance and functionality of web applications.
+              With 2 years of professional experience in web development, I&apos;ve worked on diverse projects at TecheinHub Technologies and RNK IT Solutions. My expertise spans database design, server-side programming, API development, and front-end development, ensuring overall performance and functionality of web applications.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I specialize in creating responsive, performant web applications using the MERN stack and modern frameworks like Next.js. I&apos;m constantly learning and staying updated with the latest technologies and best practices in the industry.

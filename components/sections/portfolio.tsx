@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -21,7 +22,7 @@ export function PortfolioSection() {
       tags: ['React', 'Next.js', 'Node.js', 'MongoDB'],
       link: 'https://learnve.vercel.app/',
       github: '#',
-      image: 'LEARNVE',
+      image: '/projects/learnve.jpg',
     },
     {
       id: 2,
@@ -30,7 +31,7 @@ export function PortfolioSection() {
       tags: ['Next.js', 'React', 'E-commerce', 'Tailwind'],
       link: 'https://openwayz-hazel.vercel.app/',
       github: '#',
-      image: 'Openwayz',
+      image: '/projects/openwayz.jpg',
     },
     {
       id: 3,
@@ -39,7 +40,7 @@ export function PortfolioSection() {
       tags: ['React', 'Next.js', 'Frontend', 'Responsive'],
       link: 'https://techein.com/index.html',
       github: '#',
-      image: 'TecheinHub',
+      image: '/projects/techeinbub.jpg',
     },
     {
       id: 4,
@@ -48,7 +49,7 @@ export function PortfolioSection() {
       tags: ['MERN', 'MongoDB', 'Express', 'Node.js'],
       link: 'https://rnk-frontend.onrender.com/',
       github: '#',
-      image: 'RNK-IT',
+      image: '/projects/rnk-it.jpg',
     },
     {
       id: 5,
@@ -57,7 +58,7 @@ export function PortfolioSection() {
       tags: ['MERN', 'Frontend', 'Backend', 'Database'],
       link: 'https://drive.google.com/file/d/1EC-Lyq_41_G5jdvDDl2PgtJcPzlpA4Dj/view',
       github: '#',
-      image: 'Arth-Info',
+      image: '/projects/arth-info.jpg',
     },
     {
       id: 6,
@@ -66,7 +67,7 @@ export function PortfolioSection() {
       tags: ['React', 'Next.js', 'Full-Stack', 'Web Dev'],
       link: '#',
       github: 'https://github.com/raja2282001',
-      image: 'Projects',
+      image: '/projects/learnve.jpg',
     },
   ];
 
@@ -100,16 +101,13 @@ export function PortfolioSection() {
               className="group relative overflow-hidden rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
             >
               {/* Project Image Area */}
-              <div className="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden flex items-center justify-center">
-                <motion.div
-                  animate={{ scale: hoveredIndex === index ? 1.1 : 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-center"
-                >
-                  <div className="text-6xl font-bold text-primary/20 mb-2">
-                    {project.image}
-                  </div>
-                </motion.div>
+              <div className="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
 
                 {/* Overlay */}
                 <motion.div
@@ -119,14 +117,18 @@ export function PortfolioSection() {
                   className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6"
                 >
                   <div className="flex gap-3 w-full">
-                    <Button variant="secondary" size="sm" className="flex-1">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Visit
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Code2 className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button variant="secondary" size="sm" className="w-full">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Visit
+                      </Button>
+                    </a>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button variant="outline" size="sm" className="w-full">
+                        <Code2 className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    </a>
                   </div>
                 </motion.div>
               </div>

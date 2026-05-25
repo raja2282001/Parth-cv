@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Design tokens - inspired by modern portfolio aesthetic */
+  /* Design tokens - Dark mode (default) */
   --color-background: hsl(10 14% 6%);
   --color-foreground: hsl(210 40% 96%);
   --color-card: hsl(20 14% 13%);
@@ -18,18 +18,48 @@
   --radius-DEFAULT: 12px;
 }
 
+/* Light mode */
+html.light {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(10 14% 6%);
+  --color-card: hsl(0 0% 96%);
+  --color-card-foreground: hsl(10 14% 6%);
+  --color-primary: hsl(210 70% 55%);
+  --color-primary-foreground: hsl(210 20% 98%);
+  --color-secondary: hsl(180 70% 50%);
+  --color-secondary-foreground: hsl(210 20% 98%);
+  --color-accent: hsl(345 70% 60%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-muted: hsl(210 11% 65%);
+  --color-muted-foreground: hsl(10 14% 6%);
+  --color-border: hsl(0 0% 90%);
+}
+
 html {
   background-color: hsl(10 14% 6%);
+}
+
+html.light {
+  background-color: hsl(0 0% 100%);
 }
 
 * {
   border-color: hsl(20 14% 20%);
 }
 
+html.light * {
+  border-color: hsl(0 0% 90%);
+}
+
 body {
   background-color: hsl(10 14% 6%);
   color: hsl(210 40% 96%);
   font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+html.light body {
+  background-color: hsl(0 0% 100%);
+  color: hsl(10 14% 6%);
 }
 
 /* Smooth scrolling */

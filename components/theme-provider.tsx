@@ -13,9 +13,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
     
     if (isDark) {
+      document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
   }, [theme]);
 
