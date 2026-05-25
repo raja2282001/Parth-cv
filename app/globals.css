@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Design tokens - Dark mode (default) */
+  /* Dark mode (default) - Tailwind v4 theme */
   --color-background: hsl(10 14% 6%);
   --color-foreground: hsl(210 40% 96%);
   --color-card: hsl(20 14% 13%);
@@ -15,10 +15,10 @@
   --color-muted: hsl(210 11% 35%);
   --color-muted-foreground: hsl(210 40% 96%);
   --color-border: hsl(20 14% 20%);
-  --radius-DEFAULT: 12px;
+  --radius: 12px;
 }
 
-/* Light mode */
+/* Light mode CSS variables override */
 html.light {
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(10 14% 6%);
@@ -36,30 +36,18 @@ html.light {
 }
 
 html {
-  background-color: hsl(10 14% 6%);
-}
-
-html.light {
-  background-color: hsl(0 0% 100%);
-}
-
-* {
-  border-color: hsl(20 14% 20%);
-}
-
-html.light * {
-  border-color: hsl(0 0% 90%);
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
 }
 
 body {
-  background-color: hsl(10 14% 6%);
-  color: hsl(210 40% 96%);
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
-html.light body {
-  background-color: hsl(0 0% 100%);
-  color: hsl(10 14% 6%);
+* {
+  border-color: hsl(var(--color-border));
 }
 
 /* Smooth scrolling */
