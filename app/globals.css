@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens - inspired by modern portfolio aesthetic */
+:root {
+  --background: 10 14% 6%;
+  --foreground: 210 40% 96%;
+  --card: 20 14% 13%;
+  --card-foreground: 210 40% 96%;
+  --primary: 210 70% 55%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 180 70% 50%;
+  --secondary-foreground: 210 20% 98%;
+  --accent: 345 70% 60%;
+  --accent-foreground: 10 14% 6%;
+  --muted: 210 11% 35%;
+  --muted-foreground: 210 40% 96%;
+  --border: 20 14% 20%;
+  --radius: 12px;
+}
+
+html {
+  @apply bg-background;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Glassmorphism effect */
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-black/10 border border-white/10;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-primary text-primary-foreground;
+}
+
+::-moz-selection {
+  @apply bg-primary text-primary-foreground;
+}

@@ -1,22 +1,24 @@
 {
-  "name": "John_Doe",
-  "version": "1.5.0",
-  "description": "An elegant responsive bootstrap 4.x theme.",
-  "main": "gulpfile.js",
-  "author": "DevCRUD",
+  "name": "parth-portfolio",
+  "version": "2.0.0",
+  "description": "Modern portfolio website built with Next.js, React, and Tailwind CSS.",
+  "author": "Parth Patel",
   "scripts": {
-    "start": "gulp"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-sass": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^7.0.0"
@@ -32,5 +34,18 @@
     "opera >= 23",
     "ios >= 7",
     "android >= 4"
-  ]
+  ],
+  "dependencies": {
+    "autoprefixer": "^10.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.16.0",
+    "next": "^16.2.6",
+    "postcss": "^8.5.15",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwindcss": "^4.3.0",
+    "zustand": "^5.0.13"
+  }
 }
