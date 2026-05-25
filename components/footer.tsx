@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -15,7 +15,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Github, href: 'https://github.com', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FileText, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: ExternalLink, href: 'https://twitter.com', label: 'Twitter' },
     { icon: Mail, href: 'mailto:hello@parthpatel.dev', label: 'Email' },
   ];
 
