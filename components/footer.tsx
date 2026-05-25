@@ -13,10 +13,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Globe, href: 'https://github.com', label: 'GitHub' },
-    { icon: Users, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: ExternalLink, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@parthpatel.dev', label: 'Email' },
+    { icon: Globe, href: 'https://github.com/raja2282001', label: 'GitHub' },
+    { icon: Users, href: 'https://www.linkedin.com/in/patel-parth-04670b247', label: 'LinkedIn' },
+    { icon: ExternalLink, href: 'https://instagram.com/ll__patel_raja_ll?igshid=NGExMmI2YTkyZg==', label: 'Instagram' },
+    { icon: Mail, href: 'mailto:patelparth4656@gmail.com', label: 'Email' },
   ];
 
   const quickLinks = [
@@ -37,9 +37,9 @@ export function Footer() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h3 className="text-2xl font-bold gradient-text mb-2">PP</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-2">Parth Patel</h3>
             <p className="text-muted-foreground text-sm">
-              Full-stack developer crafting beautiful digital experiences.
+              MERN developer with 7 months of experience crafting beautiful and scalable web applications.
             </p>
           </motion.div>
 

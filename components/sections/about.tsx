@@ -28,7 +28,7 @@ export function AboutSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A passionate full-stack developer with expertise in building scalable, user-centric web applications using modern technologies.
+            I am a MERN developer with expertise in designing, developing, and maintaining web applications using MongoDB, Express.js, React, and Node.js.
           </p>
         </motion.div>
 
@@ -42,10 +42,10 @@ export function AboutSection() {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With over 5 years of experience in web development, I&apos;ve worked on diverse projects ranging from startups to enterprise-scale applications. My journey in tech started with a curiosity about how things work, which evolved into a professional career building beautiful and functional digital products.
+              With 7 months of professional experience in web development, I&apos;ve worked on diverse projects at TecheinHub Technologies and RNK IT Solutions. My expertise spans database design, server-side programming, API development, and front-end development, ensuring overall performance and functionality of web applications.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I specialize in creating responsive, performant web applications that users love. I&apos;m constantly learning and staying updated with the latest technologies and best practices in the industry.
+              I specialize in creating responsive, performant web applications using the MERN stack and modern frameworks like Next.js. I&apos;m constantly learning and staying updated with the latest technologies and best practices in the industry.
             </p>
             <div className="flex gap-4 flex-wrap pt-4">
               {['React', 'Next.js', 'TypeScript', 'Tailwind', 'Node.js', 'PostgreSQL'].map((tech) => (

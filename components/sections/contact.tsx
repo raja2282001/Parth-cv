@@ -67,19 +67,19 @@ export function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@parthpatel.dev',
-      href: 'mailto:hello@parthpatel.dev',
+      value: 'patelparth4656@gmail.com',
+      href: 'mailto:patelparth4656@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+91 99240 69097',
+      href: 'tel:+919924069097',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Ahmedabad, India',
       href: '#',
     },
   ];

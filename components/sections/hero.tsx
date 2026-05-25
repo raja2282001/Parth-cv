@@ -55,7 +55,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-8xl font-bold gradient-text mb-6 leading-tight"
           >
-            Full Stack Developer
+            Parth Patel
           </motion.h1>
 
           {/* Subheading */}
@@ -63,8 +63,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            Crafting beautiful, performant web experiences with modern technologies.
-            Let&apos;s build something amazing together.
+            Frontend & Backend Web Developer with 7 months of professional experience. Specializing in MERN stack and modern web technologies.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -96,9 +95,9 @@ export function HeroSection() {
             className="grid grid-cols-3 gap-8 max-w-md mx-auto"
           >
             {[
-              { number: '50+', label: 'Projects' },
-              { number: '5+', label: 'Years' },
-              { number: '100%', label: 'Satisfied' },
+              { number: '10+', label: 'Projects' },
+              { number: '7mo', label: 'Experience' },
+              { number: '100%', label: 'Dedicated' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
