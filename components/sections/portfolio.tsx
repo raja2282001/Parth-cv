@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const fadeInUp = {
@@ -124,7 +124,7 @@ export function PortfolioSection() {
                       Visit
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1">
-                      <Github className="w-4 h-4 mr-2" />
+                      <Code2 className="w-4 h-4 mr-2" />
                       Code
                     </Button>
                   </div>

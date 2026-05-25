@@ -1,35 +1,34 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-/* Design tokens - inspired by modern portfolio aesthetic */
-:root {
-  --background: 10 14% 6%;
-  --foreground: 210 40% 96%;
-  --card: 20 14% 13%;
-  --card-foreground: 210 40% 96%;
-  --primary: 210 70% 55%;
-  --primary-foreground: 210 20% 98%;
-  --secondary: 180 70% 50%;
-  --secondary-foreground: 210 20% 98%;
-  --accent: 345 70% 60%;
-  --accent-foreground: 10 14% 6%;
-  --muted: 210 11% 35%;
-  --muted-foreground: 210 40% 96%;
-  --border: 20 14% 20%;
-  --radius: 12px;
+@theme {
+  /* Design tokens - inspired by modern portfolio aesthetic */
+  --color-background: hsl(10 14% 6%);
+  --color-foreground: hsl(210 40% 96%);
+  --color-card: hsl(20 14% 13%);
+  --color-card-foreground: hsl(210 40% 96%);
+  --color-primary: hsl(210 70% 55%);
+  --color-primary-foreground: hsl(210 20% 98%);
+  --color-secondary: hsl(180 70% 50%);
+  --color-secondary-foreground: hsl(210 20% 98%);
+  --color-accent: hsl(345 70% 60%);
+  --color-accent-foreground: hsl(10 14% 6%);
+  --color-muted: hsl(210 11% 35%);
+  --color-muted-foreground: hsl(210 40% 96%);
+  --color-border: hsl(20 14% 20%);
+  --radius-DEFAULT: 12px;
 }
 
 html {
-  @apply bg-background;
+  background-color: hsl(10 14% 6%);
 }
 
 * {
-  @apply border-border;
+  border-color: hsl(20 14% 20%);
 }
 
 body {
-  @apply bg-background text-foreground;
+  background-color: hsl(10 14% 6%);
+  color: hsl(210 40% 96%);
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 

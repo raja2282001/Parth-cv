@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
     "@types/react": "19.2.15",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
@@ -22,7 +23,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "imagemin-jpeg-recompress": "^6.0.0",
-    "imagemin-pngquant": "^7.0.0"
+    "imagemin-pngquant": "^7.0.0",
+    "typescript": "6.0.3"
   },
   "browserslist": [
     "> 1%",
