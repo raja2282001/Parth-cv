@@ -1,6 +1,7 @@
 {
   "name": "parth-portfolio",
   "version": "2.0.0",
+  "packageManager": "pnpm@10.11.0",
   "description": "Modern portfolio website built with Next.js, React, and Tailwind CSS.",
   "author": "Parth Patel",
   "scripts": {
