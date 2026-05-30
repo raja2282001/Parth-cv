@@ -73,7 +73,7 @@ export function AboutSection() {
               <img
                 src="/about-media.jpg"
                 alt="About section image"
-                fill
+                // fill
                 className="object-cover"
               />
             </div>
