@@ -26,7 +26,8 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
     "sass": "^1.88.0",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "@types/nodemailer": "^6.10.1"
   },
   "browserslist": [
     "> 1%",
