@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Code, Database, Layout } from 'lucide-react';
 
@@ -12,8 +13,8 @@ const fadeInUp = {
 export function AboutSection() {
   const skills = [
     { icon: Layout, title: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'] },
-    { icon: Database, title: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL'] },
-    { icon: Code, title: 'Tools', items: ['Git', 'Docker', 'AWS', 'Vercel'] },
+    { icon: Database, title: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'MySQL'] },
+    { icon: Code, title: 'Tools', items: ['Git', 'Vercel'] },
   ];
 
   return (
@@ -42,13 +43,13 @@ export function AboutSection() {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With 2 years of professional experience in web development, I&apos;ve worked on diverse projects at TecheinHub Technologies and RNK IT Solutions. My expertise spans database design, server-side programming, API development, and front-end development, ensuring overall performance and functionality of web applications.
+              With 2 years of professional experience in web development, I&apos;ve worked on diverse projects at TecheinHub Technologies and RNK IT Solutions. My expertise spans database design, API development, and front-end development, ensuring overall performance and functionality of web applications.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I specialize in creating responsive, performant web applications using the MERN stack and modern frameworks like Next.js. I&apos;m constantly learning and staying updated with the latest technologies and best practices in the industry.
             </p>
             <div className="flex gap-4 flex-wrap pt-4">
-              {['React', 'Next.js', 'TypeScript', 'Tailwind', 'Node.js', 'PostgreSQL'].map((tech) => (
+              {['React', 'Next.js', 'TypeScript', 'Tailwind', 'Node.js', 'MySQL'].map((tech) => (
                 <motion.div
                   key={tech}
                   whileHover={{ scale: 1.05 }}
@@ -68,8 +69,13 @@ export function AboutSection() {
             transition={{ delay: 0.2 }}
             className="glass rounded-2xl p-8"
           >
-            <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center">
-              <Code className="w-32 h-32 text-primary/40" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border">
+              <img
+                src="/about-media.jpg"
+                alt="About section image"
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
         </div>

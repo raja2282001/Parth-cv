@@ -28,6 +28,7 @@ export function ContactSection() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [responseMessage, setResponseMessage] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -46,18 +47,27 @@ export function ContactSection() {
         body: JSON.stringify(formData),
       });
 
+      let data: { message?: string; error?: string } = {};
+      try {
+        data = await response.json();
+      } catch {
+        data = {};
+      }
+
+      const message = data.error || data.message || response.statusText || 'Something went wrong. Please try again.';
+
       if (response.ok) {
         setSubmitStatus('success');
+        setResponseMessage(message);
         setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setSubmitStatus('idle'), 3000);
       } else {
         setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('idle'), 3000);
+        setResponseMessage(message);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      setResponseMessage('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -67,8 +77,8 @@ export function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'patelparth4656@gmail.com',
-      href: 'mailto:patelparth4656@gmail.com',
+      value: 'patelparth4655@gmail.com',
+      href: 'mailto:patelparth4655@gmail.com',
     },
     {
       icon: Phone,
@@ -114,7 +124,7 @@ export function ContactSection() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: 0.1 * index }}
-                className="glass rounded-xl p-6 text-center hover:border-primary/50 transition-all group"
+                className="glass rounded-xl p-6 text-center border border-border hover:border-primary/50 transition-all group"
               >
                 <div className="inline-block p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-all mb-4">
                   <Icon className="w-6 h-6 text-primary" />
@@ -135,7 +145,7 @@ export function ContactSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="glass rounded-2xl p-8 md:p-12 max-w-2xl mx-auto"
+          className="glass rounded-2xl p-8 md:p-12 max-w-2xl mx-auto border border-border"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -202,7 +212,7 @@ export function ContactSection() {
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 rounded-lg bg-primary/10 border border-primary/50 text-primary"
               >
-                Thank you! I&apos;ll get back to you soon.
+                {responseMessage || 'Thank you! I&apos;ll get back to you soon.'}
               </motion.div>
             )}
 
@@ -212,7 +222,7 @@ export function ContactSection() {
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 rounded-lg bg-accent/10 border border-accent/50 text-accent"
               >
-                Something went wrong. Please try again.
+                {responseMessage || 'Something went wrong. Please try again.'}
               </motion.div>
             )}
 
@@ -225,7 +235,7 @@ export function ContactSection() {
             >
               {isLoading ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-5 h-5 border-2 border-border border-t-transparent rounded-full animate-spin" />
                   Sending...
                 </>
               ) : (

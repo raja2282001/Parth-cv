@@ -79,7 +79,7 @@ export function FAQSection() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full glass rounded-lg p-6 text-left hover:border-primary/50 transition-all duration-300 group"
+                className="w-full glass rounded-lg p-6 text-left border border-border hover:border-primary/50 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">

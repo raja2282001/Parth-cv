@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 // Rate limiting
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -65,21 +66,43 @@ export async function POST(request: NextRequest) {
     const sanitizedSubject = sanitizeInput(subject);
     const sanitizedMessage = sanitizeInput(message);
 
-    // Here you would send an email
-    // For now, we'll log and return success
-    console.log('Contact form submission:', {
-      name: sanitizedName,
-      email,
-      subject: sanitizedSubject,
-      message: sanitizedMessage,
-      timestamp: new Date().toISOString(),
+    const emailHost = process.env.EMAIL_HOST;
+    const emailPort = process.env.EMAIL_PORT;
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+    const emailTo = process.env.EMAIL_TO || 'patelparth4655@gmail.com';
+    const emailFrom = process.env.EMAIL_FROM || emailUser;
+
+    if (!emailHost || !emailPort || !emailUser || !emailPass) {
+      console.error('Email configuration is missing.');
+      return NextResponse.json(
+        { error: 'Email service is not configured. Please set email environment variables.' },
+        { status: 500 }
+      );
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: emailHost,
+      port: Number(emailPort),
+      secure: Number(emailPort) === 465,
+      auth: {
+        user: emailUser,
+        pass: emailPass,
+      },
     });
 
-    // TODO: Integrate with your email service
-    // Example using nodemailer, SendGrid, etc.
+    const mailOptions = {
+      from: `Portfolio Contact <${emailFrom}>`,
+      to: emailTo,
+      subject: `Website Contact Form: ${sanitizedSubject}`,
+      text: `Name: ${sanitizedName}\nEmail: ${email}\nSubject: ${sanitizedSubject}\nMessage:\n${sanitizedMessage}`,
+      html: `<p><strong>Name:</strong> ${sanitizedName}</p><p><strong>Email:</strong> ${email}</p><p><strong>Subject:</strong> ${sanitizedSubject}</p><p><strong>Message:</strong><br/>${sanitizedMessage.replace(/\n/g, '<br/>')}</p>`,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
-      { message: 'Message received! I&apos;ll get back to you soon.' },
+      { message: 'Message sent successfully. I will get back to you soon.' },
       { status: 200 }
     );
   } catch (error) {

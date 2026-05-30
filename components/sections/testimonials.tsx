@@ -105,7 +105,7 @@ export function TestimonialsSection() {
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               className="absolute inset-0"
             >
-              <div className="glass rounded-2xl p-8 h-full flex flex-col justify-between">
+              <div className="glass rounded-2xl p-8 h-full flex flex-col justify-between border border-border">
                 {/* Rating */}
                 <div className="flex gap-1">
                   {Array.from({ length: testimonials[current].rating }).map((_, i) => (

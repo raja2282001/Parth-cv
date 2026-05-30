@@ -62,25 +62,27 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: hsl(var(--color-background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
+  background: hsl(var(--color-muted));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
+  background: hsl(var(--color-primary));
 }
 
 /* Glassmorphism effect */
 .glass {
-  @apply backdrop-blur-md bg-white/10 border border-white/20;
+  @apply backdrop-blur-md;
+  background-color: hsl(var(--color-card) / 0.75);
 }
 
 .glass-dark {
-  @apply backdrop-blur-md bg-black/10 border border-white/10;
+  @apply backdrop-blur-md;
+  background-color: hsl(var(--color-card) / 0.75);
 }
 
 /* Gradient text */

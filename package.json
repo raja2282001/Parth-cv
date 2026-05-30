@@ -20,10 +20,11 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
+    "sass": "^1.88.0",
     "typescript": "6.0.3"
   },
   "browserslist": [
@@ -45,6 +46,7 @@
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.16.0",
     "next": "^16.2.6",
+    "nodemailer": "^6.10.1",
     "postcss": "^8.5.15",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
