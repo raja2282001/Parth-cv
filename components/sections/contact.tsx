@@ -39,6 +39,7 @@ export function ContactSection() {
     e.preventDefault();
     setIsLoading(true);
     setSubmitStatus('idle');
+    setResponseMessage('');
 
     try {
       const response = await fetch('/api/contact', {

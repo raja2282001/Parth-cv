@@ -39,7 +39,7 @@ export function Footer() {
           >
             <h3 className="text-2xl font-bold gradient-text mb-2">Parth Patel</h3>
             <p className="text-muted-foreground text-sm">
-              MERN developer with 7 months of experience crafting beautiful and scalable web applications.
+              MERN developer with 2 years of experience crafting beautiful and scalable web applications.
             </p>
           </motion.div>
 

@@ -79,15 +79,6 @@ export function PortfolioSection() {
       image: '/projects/malefashion.jpg',
     },
     {
-      id: 11,
-      title: 'AM PATEL ACCOUNTING',
-      description: 'An accounting management system for handling financial matters within a company. Manages responsibilities like reconciling bank statements and calculating payroll to keep companies in strong financial standing.',
-      tags: ['Accounting', 'Financial', 'Management System', 'Full-Stack'],
-      link: 'https://account-fronted.onrender.com/',
-      github: '#',
-      image: '/projects/accounting.jpg',
-    },
-    {
       id: 14,
       title: 'E-Comms Project',
       description: 'An e-commerce platform built for fast and reliable online shopping. Features a clean, responsive storefront with secure checkout and product discovery designed for modern web users.',
