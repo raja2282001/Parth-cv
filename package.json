@@ -27,7 +27,7 @@
     "imagemin-pngquant": "^7.0.0",
     "sass": "^1.88.0",
     "typescript": "6.0.3",
-    "@types/nodemailer": "^6.10.1"
+    "@types/nodemailer": "^8.0.0"
   },
   "browserslist": [
     "> 1%",
