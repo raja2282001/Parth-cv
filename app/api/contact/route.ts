@@ -54,7 +54,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!isValidEmail(email)) {
+    const sanitizedEmail = String(email).trim();
+    if (!isValidEmail(sanitizedEmail)) {
       return NextResponse.json(
         { error: 'Invalid email address.' },
         { status: 400 }
@@ -62,9 +63,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Sanitize inputs
-    const sanitizedName = sanitizeInput(name);
-    const sanitizedSubject = sanitizeInput(subject);
-    const sanitizedMessage = sanitizeInput(message);
+    const sanitizedName = sanitizeInput(String(name));
+    const sanitizedSubject = sanitizeInput(String(subject));
+    const sanitizedMessage = sanitizeInput(String(message));
 
     const emailHost = process.env.EMAIL_HOST;
     const emailPort = process.env.EMAIL_PORT;
@@ -93,10 +94,11 @@ export async function POST(request: NextRequest) {
 
     const mailOptions = {
       from: `Portfolio Contact <${emailFrom}>`,
+      replyTo: sanitizedEmail,
       to: emailTo,
       subject: `Website Contact Form: ${sanitizedSubject}`,
-      text: `Name: ${sanitizedName}\nEmail: ${email}\nSubject: ${sanitizedSubject}\nMessage:\n${sanitizedMessage}`,
-      html: `<p><strong>Name:</strong> ${sanitizedName}</p><p><strong>Email:</strong> ${email}</p><p><strong>Subject:</strong> ${sanitizedSubject}</p><p><strong>Message:</strong><br/>${sanitizedMessage.replace(/\n/g, '<br/>')}</p>`,
+      text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nSubject: ${sanitizedSubject}\nMessage:\n${sanitizedMessage}`,
+      html: `<p><strong>Name:</strong> ${sanitizedName}</p><p><strong>Email:</strong> ${sanitizedEmail}</p><p><strong>Subject:</strong> ${sanitizedSubject}</p><p><strong>Message:</strong><br/>${sanitizedMessage.replace(/\n/g, '<br/>')}</p>`,
     };
 
     await transporter.sendMail(mailOptions);
