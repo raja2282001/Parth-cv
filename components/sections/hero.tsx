@@ -110,7 +110,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
@@ -131,7 +131,7 @@ export function HeroSection() {
               />
             </svg>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

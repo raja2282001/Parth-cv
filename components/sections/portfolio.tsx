@@ -78,15 +78,15 @@ export function PortfolioSection() {
       github: '#',
       image: '/projects/malefashion.jpg',
     },
-    {
-      id: 14,
-      title: 'E-Comms Project',
-      description: 'An e-commerce platform built for fast and reliable online shopping. Features a clean, responsive storefront with secure checkout and product discovery designed for modern web users.',
-      tags: ['E-commerce', 'Next.js', 'React', 'MySQL'],
-      link: 'https://estore.gutestsite.com/',
-      github: '#',
-      image: '/projects/Gsa.png',
-    },
+    // {
+    //   id: 14,
+    //   title: 'E-Comms Project',
+    //   description: 'An e-commerce platform built for fast and reliable online shopping. Features a clean, responsive storefront with secure checkout and product discovery designed for modern web users.',
+    //   tags: ['E-commerce', 'Next.js', 'React', 'MySQL'],
+    //   link: 'https://estore.gutestsite.com/',
+    //   github: '#',
+    //   image: '/projects/Gsa.png',
+    // },
   ];
 
   return (

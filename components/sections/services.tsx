@@ -12,14 +12,14 @@ const fadeInUp = {
 export function ServicesSection() {
   const services = [
     {
-      icon: Globe,
-      title: 'Web Development',
-      description: 'Building responsive, modern websites with React, Next.js, and Tailwind CSS.',
-    },
-    {
       icon: Smartphone,
       title: 'Responsive Design',
       description: 'Creating beautiful interfaces that work seamlessly across all devices.',
+    },
+    {
+      icon: Globe,
+      title: 'Web Development',
+      description: 'Building responsive, modern websites with React, Next.js, and Tailwind CSS.',
     },
     {
       icon: Zap,
