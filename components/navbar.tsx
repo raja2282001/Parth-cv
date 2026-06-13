@@ -38,6 +38,10 @@ export function Navbar() {
     setTheme(themes[nextIndex]);
   };
 
+  const navLinkClasses = 'px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors';
+  const mobileLinkClasses = 'block px-3 py-2 rounded-lg text-base font-medium text-foreground hover:bg-card hover:text-primary transition-colors';
+  const mobileToggleClasses = 'md:hidden p-2 rounded-lg text-foreground hover:bg-card transition-colors';
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -68,7 +72,7 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className={navLinkClasses}
               >
                 {link.label}
               </motion.a>
@@ -93,7 +97,8 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-card transition-colors"
+              className={mobileToggleClasses}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
               {isOpen ? (
                 <X className="w-6 h-6" />
@@ -117,7 +122,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-lg text-base font-medium text-foreground hover:bg-card hover:text-primary transition-colors"
+                className={mobileLinkClasses}
               >
                 {link.label}
               </a>
