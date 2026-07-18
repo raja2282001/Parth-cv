@@ -6,19 +6,30 @@ import { Play, ExternalLink } from 'lucide-react';
 
 interface VideoCardProps {
   title: string;
-  href: string;
+  href?: string;
+  onClick?: () => void;
   isViewMore?: boolean;
 }
 
-export function VideoCard({ title, href, isViewMore = false }: VideoCardProps) {
+export function VideoCard({ title, href, onClick, isViewMore = false }: VideoCardProps) {
+  const Component = isViewMore ? motion.a : motion.button;
+  const componentProps = isViewMore
+    ? {
+        href,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }
+    : {
+        onClick,
+        type: 'button' as const,
+      };
+
   return (
-    <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Component
+      {...componentProps}
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.2 }}
-      className="group relative overflow-hidden rounded-xl border border-border hover:border-primary/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 block w-full"
+      className="group relative overflow-hidden rounded-xl border border-border hover:border-primary/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 block w-full bg-transparent"
     >
       <div className="relative aspect-[9/16] bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden flex items-center justify-center">
         {/* Background gradient pattern */}
@@ -56,6 +67,6 @@ export function VideoCard({ title, href, isViewMore = false }: VideoCardProps) {
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-    </motion.a>
+    </Component>
   );
 }

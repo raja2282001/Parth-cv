@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ThumbnailGallery } from './ThumbnailGallery';
-import { VideoGallery } from './VideoGallery';
+import { ThumbnailCarousel } from './ThumbnailCarousel';
+import { VideoCarousel } from './VideoCarousel';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -32,24 +32,24 @@ export function HobbiesSection() {
 
         {/* Content Sections */}
         <div className="space-y-20">
-          {/* Thumbnail Gallery Section */}
+          {/* Thumbnail Carousel Section */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={fadeInUp}
           >
-            <ThumbnailGallery />
+            <ThumbnailCarousel />
           </motion.div>
 
-          {/* Video Gallery Section */}
+          {/* Video Carousel Section */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={fadeInUp}
           >
-            <VideoGallery />
+            <VideoCarousel />
           </motion.div>
         </div>
       </div>

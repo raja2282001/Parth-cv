@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "19.2.15",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
@@ -26,8 +27,7 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
     "sass": "^1.88.0",
-    "typescript": "6.0.3",
-    "@types/nodemailer": "^8.0.0"
+    "typescript": "6.0.3"
   },
   "browserslist": [
     "> 1%",
@@ -45,6 +45,8 @@
     "autoprefixer": "^10.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.16.0",
     "next": "^16.2.6",
