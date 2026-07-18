@@ -63,20 +63,24 @@ interface ReelCardProps {
 }
 
 function ReelCard({ reel, index }: ReelCardProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (isHovered && videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else if (!isHovered && videoRef.current && isPlaying) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      setIsPlaying(false);
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isHovered) {
+      video.play().catch((err) => {
+        if (err.name !== 'AbortError') {
+          console.error('[v0] Video play error:', err);
+        }
+      });
+    } else {
+      video.pause();
+      video.currentTime = 0;
     }
-  }, [isHovered, isPlaying]);
+  }, [isHovered]);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -108,16 +112,12 @@ function ReelCard({ reel, index }: ReelCardProps) {
         <div className="relative aspect-[9/16] bg-black overflow-hidden flex items-center justify-center">
           <video
             ref={videoRef}
+            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             className="w-full h-full object-cover"
-            onLoadedMetadata={() => {
-              if (videoRef.current) {
-                videoRef.current.currentTime = 0;
-              }
-            }}
           >
             <source src={reel.videoUrl} type="video/mp4" />
           </video>
