@@ -101,7 +101,6 @@ export function ThumbnailCarousel() {
               spaceBetween={24}
               slidesPerView={1}
               loop={true} // Creates physical slide clones for an infinite forward loop
-              loopedSlides={2}
               autoplay={{
                 delay: 4000,
                 disableOnInteraction: false,
