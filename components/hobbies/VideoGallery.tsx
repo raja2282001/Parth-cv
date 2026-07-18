@@ -13,33 +13,28 @@ export function VideoGallery() {
   const videos = [
     {
       id: 1,
-      title: 'Video Reel 1',
+      title: 'Video Editing Reel',
       href: 'https://www.instagram.com/reel/DOC4lTnD8FU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-      thumbnail: 'https://www.instagram.com/reel/DOC4lTnD8FU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
     {
       id: 2,
-      title: 'Video Reel 2',
+      title: 'Creative Editing',
       href: 'https://www.instagram.com/reel/DM6yXmJIeKN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-      thumbnail: 'https://www.instagram.com/reel/DM6yXmJIeKN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
     {
       id: 3,
-      title: 'Video Reel 3',
+      title: 'Motion Design',
       href: 'https://www.instagram.com/reel/DZY7dsMMqiJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-      thumbnail: 'https://www.instagram.com/reel/DZY7dsMMqiJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
     {
       id: 4,
-      title: 'Video Reel 4',
+      title: 'Visual Effects',
       href: 'https://www.instagram.com/reel/DYvrSGXM7rd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-      thumbnail: 'https://www.instagram.com/reel/DYvrSGXM7rd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
     {
       id: 5,
-      title: 'Video Reel 5',
+      title: 'Professional Edit',
       href: 'https://www.instagram.com/reel/DW6hgremrC5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-      thumbnail: 'https://www.instagram.com/reel/DW6hgremrC5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
     },
   ];
 
@@ -70,7 +65,6 @@ export function VideoGallery() {
             <VideoCard
               title={video.title}
               href={video.href}
-              thumbnail={video.thumbnail}
             />
           </motion.div>
         ))}

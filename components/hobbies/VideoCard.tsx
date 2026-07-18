@@ -3,16 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 interface VideoCardProps {
-  thumbnail?: string;
   title: string;
   href: string;
   isViewMore?: boolean;
 }
 
-export function VideoCard({ thumbnail, title, href, isViewMore = false }: VideoCardProps) {
+export function VideoCard({ title, href, isViewMore = false }: VideoCardProps) {
   return (
     <motion.a
       href={href}
@@ -20,43 +18,43 @@ export function VideoCard({ thumbnail, title, href, isViewMore = false }: VideoC
       rel="noopener noreferrer"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.2 }}
-      className="group relative overflow-hidden rounded-xl border border-border hover:border-primary/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 block"
+      className="group relative overflow-hidden rounded-xl border border-border hover:border-primary/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 block w-full"
     >
-      <div className="relative aspect-[9/16] bg-card/50 overflow-hidden flex items-center justify-center">
-        {thumbnail && (
-          <img
-            src={thumbnail}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-            loading="lazy"
-          />
-        )}
+      <div className="relative aspect-[9/16] bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden flex items-center justify-center">
+        {/* Background gradient pattern */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 p-6">
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center gap-4 p-6 text-center">
           {!isViewMore ? (
             <>
-              <div className="p-3 rounded-full bg-primary text-primary-foreground">
-                <Play className="w-6 h-6 fill-current" />
+              <div className="p-4 rounded-full bg-primary/80 group-hover:bg-primary text-primary-foreground transition-colors duration-300">
+                <Play className="w-8 h-8 fill-current" />
               </div>
-              <p className="text-sm font-medium text-center text-foreground">
+              <p className="text-sm font-medium text-foreground line-clamp-2">
                 {title}
+              </p>
+              <p className="text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Click to watch
               </p>
             </>
           ) : (
             <>
-              <div className="p-3 rounded-full bg-primary text-primary-foreground">
-                <ExternalLink className="w-6 h-6" />
+              <div className="p-4 rounded-full bg-primary/80 group-hover:bg-primary text-primary-foreground transition-colors duration-300">
+                <ExternalLink className="w-8 h-8" />
               </div>
-              <p className="text-lg font-bold text-center text-foreground">
+              <p className="text-lg font-bold text-foreground">
                 {title}
               </p>
-              <p className="text-xs text-muted-foreground text-center">
-                Visit my Instagram profile
+              <p className="text-xs text-muted-foreground">
+                Visit Instagram
               </p>
             </>
           )}
         </div>
+
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
     </motion.a>
   );
